@@ -1,0 +1,699 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hack The Box - Domina el Hacking Ético</title>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Rajdhani:wght@400;500;600;700&display=swap"
+    rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+  <!-- ==========================================
+     NAVBAR
+========================================== -->
+  <nav>
+    <a href="#" class="nav-logo">
+      <div class="logo-icon">
+        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M12 2L2 7l10 5 10-5-10-5z" fill="#000" />
+          <path d="M2 17l10 5 10-5M2 12l10 5 10-5" stroke="#000" stroke-width="1.5" stroke-linecap="round" />
+        </svg>
+      </div>
+      <span class="logo-text">Hack<span>The</span>Box</span>
+    </a>
+
+    <div class="nav-links">
+      <a href="#">Por qué HTB</a>
+      <a href="#features">Plataforma</a>
+      <a href="#labs">Laboratorios</a>
+      <a href="#tracks">Rutas</a>
+      <a href="#leaderboard">Ranking</a>
+      <a href="#">Recursos</a>
+    </div>
+
+    <div class="nav-actions">
+      <a href="#" class="btn-outline" onclick="openAuth()">Iniciar sesión</a>
+      <a href="#" class="btn-green" onclick="openAuth(true)">Comenzar gratis →</a>
+    </div>
+  </nav>
+  <main>
+
+    <!-- ==========================================
+     HERO
+========================================== -->
+    <section class="hero" id="hero">
+      <div class="hero-grid"></div>
+      <div class="hero-glow"></div>
+
+      <div class="hero-content">
+        <div class="hero-badge">
+          <span class="badge-dot"></span>
+          <span class="badge-text">Plataforma N°1 en Ciberseguridad</span>
+        </div>
+
+        <h1>
+          Domina el<br>
+          <span class="accent">Hacking Ético</span>
+        </h1>
+
+        <p>Aprende, practica y demuestra tus habilidades con más de 1.500 laboratorios reales, CTFs globales y rutas de
+          aprendizaje estructuradas.</p>
+
+        <div class="hero-actions">
+          <a href="#" class="btn-green btn-hero" onclick="openAuth(true)">Comenzar gratis →</a>
+          <a href="#labs" class="btn-outline btn-hero">Ver laboratorios</a>
+        </div>
+
+        <div class="hero-stats">
+          <div class="stat-item">
+            <div class="stat-num">2M+</div>
+            <div class="stat-label">Miembros</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-num">1,500+</div>
+            <div class="stat-label">Labs activos</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-num">650+</div>
+            <div class="stat-label">Empresas</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-num">100+</div>
+            <div class="stat-label">Países</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Terminal animada -->
+      <div class="hero-visual">
+        <div class="terminal">
+          <div class="term-header">
+            <span class="dot dot-r"></span>
+            <span class="dot dot-y"></span>
+            <span class="dot dot-g"></span>
+            <span class="term-title">htb@kali:~/machines/lame</span>
+          </div>
+          <div class="term-body" id="terminal-output">
+            <!-- Contenido inyectado por JS con efecto typing -->
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================
+     FEATURES
+========================================== -->
+    <section class="features" id="features">
+      <div class="features-header">
+        <div class="section-label">¿Por qué HTB?</div>
+        <h2 class="section-title">Todo lo que necesitas para<br>convertirte en un hacker</h2>
+        <p class="section-sub">Desde principiante hasta experto, tenemos el contenido y los retos que necesitas para
+          crecer en ciberseguridad.</p>
+      </div>
+
+      <div class="features-grid">
+
+        <div class="feature-card">
+          <div class="f-icon">
+            <svg viewBox="0 0 24 24">
+              <rect x="2" y="3" width="20" height="14" rx="2" />
+              <path d="M8 21h8M12 17v4" />
+            </svg>
+          </div>
+          <h3>Laboratorios Reales</h3>
+          <p>Más de 1.500 máquinas vulnerables basadas en escenarios del mundo real para practicar pentesting activo.
+          </p>
+          <span class="f-badge">1,500+</span>
+        </div>
+
+        <div class="feature-card">
+          <div class="f-icon">
+            <svg viewBox="0 0 24 24">
+              <path d="M22 12h-4l-3 9L9 3l-3 9H2" />
+            </svg>
+          </div>
+          <h3>Rutas de Aprendizaje</h3>
+          <p>Itinerarios estructurados por nivel y especialización: Web, Forense, Red Team, Blue Team y más.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="f-icon">
+            <svg viewBox="0 0 24 24">
+              <polygon
+                points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+            </svg>
+          </div>
+          <h3>Competencias CTF</h3>
+          <p>Compite en Capture The Flag con jugadores de todo el mundo y sube en el ranking global.</p>
+          <span class="f-badge">LIVE</span>
+        </div>
+
+        <div class="feature-card">
+          <div class="f-icon">
+            <svg viewBox="0 0 24 24">
+              <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+              <circle cx="9" cy="7" r="4" />
+              <path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75" />
+            </svg>
+          </div>
+          <h3>Comunidad Global</h3>
+          <p>Únete a más de 2 millones de hackers en foros, Discord, meetups locales y programas de embajadores.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="f-icon">
+            <svg viewBox="0 0 24 24">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+            </svg>
+          </div>
+          <h3>Certificaciones HTB</h3>
+          <p>Obtén credenciales reconocidas por la industria que validan tus habilidades en ciberseguridad ofensiva y
+            defensiva.</p>
+          <span class="f-badge">NUEVO</span>
+        </div>
+
+        <div class="feature-card">
+          <div class="f-icon">
+            <svg viewBox="0 0 24 24">
+              <circle cx="12" cy="12" r="10" />
+              <path
+                d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
+            </svg>
+          </div>
+          <h3>Academia HTB</h3>
+          <p>Cursos teórico-prácticos con contenido siempre actualizado sobre las últimas técnicas de ataque y defensa.
+          </p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==========================================
+     MACHINES / LABS
+========================================== -->
+    <section class="machines" id="labs">
+      <div class="machines-header">
+        <div>
+          <div class="section-label">Laboratorios activos</div>
+          <h2 class="section-title" style="margin-bottom:0">Máquinas populares</h2>
+        </div>
+        <a href="#" class="btn-outline">Ver todas las máquinas →</a>
+      </div>
+
+      <div class="machines-grid">
+
+        <div class="machine-card">
+          <div class="machine-img" style="background:linear-gradient(135deg,#0a1628 0%,#0f2942 100%)">
+            <span class="m-icon">🐧</span>
+            <span class="diff diff-easy">Easy</span>
+          </div>
+          <div class="machine-info">
+            <h4>Lame</h4>
+            <div class="machine-meta">
+              <span class="machine-os"><span class="os-dot" style="background:var(--green)"></span> Linux</span>
+              <span class="machine-pts">20 pts</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="machine-card">
+          <div class="machine-img" style="background:linear-gradient(135deg,#0d1117 0%,#1c1a2e 100%)">
+            <span class="m-icon">🪟</span>
+            <span class="diff diff-easy">Easy</span>
+          </div>
+          <div class="machine-info">
+            <h4>Blue</h4>
+            <div class="machine-meta">
+              <span class="machine-os"><span class="os-dot" style="background:#60a5fa"></span> Windows</span>
+              <span class="machine-pts">20 pts</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="machine-card">
+          <div class="machine-img" style="background:linear-gradient(135deg,#0f1a10 0%,#1a2e1a 100%)">
+            <span class="m-icon">🔐</span>
+            <span class="diff diff-med">Medium</span>
+          </div>
+          <div class="machine-info">
+            <h4>Active</h4>
+            <div class="machine-meta">
+              <span class="machine-os"><span class="os-dot" style="background:#60a5fa"></span> Windows</span>
+              <span class="machine-pts">30 pts</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="machine-card">
+          <div class="machine-img" style="background:linear-gradient(135deg,#1a1205 0%,#2e2208 100%)">
+            <span class="m-icon">🌐</span>
+            <span class="diff diff-med">Medium</span>
+          </div>
+          <div class="machine-info">
+            <h4>Inject</h4>
+            <div class="machine-meta">
+              <span class="machine-os"><span class="os-dot" style="background:var(--green)"></span> Linux</span>
+              <span class="machine-pts">30 pts</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="machine-card">
+          <div class="machine-img" style="background:linear-gradient(135deg,#1a0808 0%,#2e0e0e 100%)">
+            <span class="m-icon">💀</span>
+            <span class="diff diff-hard">Hard</span>
+          </div>
+          <div class="machine-info">
+            <h4>Offshore</h4>
+            <div class="machine-meta">
+              <span class="machine-os"><span class="os-dot" style="background:#60a5fa"></span> Windows</span>
+              <span class="machine-pts">40 pts</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="machine-card">
+          <div class="machine-img" style="background:linear-gradient(135deg,#0e0814 0%,#1a1028 100%)">
+            <span class="m-icon">🕷️</span>
+            <span class="diff diff-hard">Hard</span>
+          </div>
+          <div class="machine-info">
+            <h4>Spider</h4>
+            <div class="machine-meta">
+              <span class="machine-os"><span class="os-dot" style="background:var(--green)"></span> Linux</span>
+              <span class="machine-pts">40 pts</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="machine-card">
+          <div class="machine-img" style="background:linear-gradient(135deg,#0a0a1a 0%,#141428 100%)">
+            <span class="m-icon">👾</span>
+            <span class="diff diff-insane">Insane</span>
+          </div>
+          <div class="machine-info">
+            <h4>Cerberus</h4>
+            <div class="machine-meta">
+              <span class="machine-os"><span class="os-dot" style="background:var(--green)"></span> Linux</span>
+              <span class="machine-pts">50 pts</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="machine-card">
+          <div class="machine-img" style="background:linear-gradient(135deg,#100a1a 0%,#200a35 100%)">
+            <span class="m-icon">🔮</span>
+            <span class="diff diff-insane">Insane</span>
+          </div>
+          <div class="machine-info">
+            <h4>Sorcerer</h4>
+            <div class="machine-meta">
+              <span class="machine-os"><span class="os-dot" style="background:#60a5fa"></span> Windows</span>
+              <span class="machine-pts">50 pts</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==========================================
+     LEARNING TRACKS
+========================================== -->
+    <section class="tracks" id="tracks">
+      <div class="tracks-header">
+        <div>
+          <div class="section-label">Rutas de aprendizaje</div>
+          <h2 class="section-title" style="margin-bottom:0">Elige tu camino</h2>
+        </div>
+        <a href="#" class="btn-outline">Ver todas las rutas →</a>
+      </div>
+
+      <div class="tracks-grid">
+
+        <div class="track-card">
+          <div class="track-header">
+            <div class="track-icon" style="background:rgba(59,130,246,0.12)">🌐</div>
+            <span class="track-count">24 módulos</span>
+          </div>
+          <div class="track-title">Web Penetration Testing</div>
+          <div class="track-desc">SQL Injection, XSS, CSRF, IDOR, SSRF y todas las vulnerabilidades web modernas.</div>
+          <div class="track-bar">
+            <div class="track-fill" style="width:65%"></div>
+          </div>
+        </div>
+
+        <div class="track-card">
+          <div class="track-header">
+            <div class="track-icon" style="background:rgba(239,68,68,0.12)">🔴</div>
+            <span class="track-count">18 módulos</span>
+          </div>
+          <div class="track-title">Red Team Operations</div>
+          <div class="track-desc">Movimiento lateral, persistencia, evasión de AV y técnicas avanzadas de ofensiva.
+          </div>
+          <div class="track-bar">
+            <div class="track-fill" style="width:40%"></div>
+          </div>
+        </div>
+
+        <div class="track-card">
+          <div class="track-header">
+            <div class="track-icon" style="background:rgba(34,197,94,0.12)">🏰</div>
+            <span class="track-count">20 módulos</span>
+          </div>
+          <div class="track-title">Active Directory</div>
+          <div class="track-desc">Kerberoasting, Pass-the-Hash, DCSync y dominio completo de entornos Windows
+            corporativos.</div>
+          <div class="track-bar">
+            <div class="track-fill" style="width:55%"></div>
+          </div>
+        </div>
+
+        <div class="track-card">
+          <div class="track-header">
+            <div class="track-icon" style="background:rgba(168,85,247,0.12)">🔬</div>
+            <span class="track-count">15 módulos</span>
+          </div>
+          <div class="track-title">Forense Digital</div>
+          <div class="track-desc">Análisis de memoria, artefactos del sistema, investigación de incidentes y threat
+            hunting.</div>
+          <div class="track-bar">
+            <div class="track-fill" style="width:30%"></div>
+          </div>
+        </div>
+
+        <div class="track-card">
+          <div class="track-header">
+            <div class="track-icon" style="background:rgba(251,191,36,0.12)">💻</div>
+            <span class="track-count">12 módulos</span>
+          </div>
+          <div class="track-title">Reversing & Malware</div>
+          <div class="track-desc">Ingeniería inversa, análisis de malware estático y dinámico con IDA Pro y Ghidra.
+          </div>
+          <div class="track-bar">
+            <div class="track-fill" style="width:20%"></div>
+          </div>
+        </div>
+
+        <div class="track-card">
+          <div class="track-header">
+            <div class="track-icon" style="background:rgba(20,184,166,0.12)">🛡️</div>
+            <span class="track-count">22 módulos</span>
+          </div>
+          <div class="track-title">Blue Team & SOC</div>
+          <div class="track-desc">Detección de amenazas, SIEM, análisis de logs y respuesta a incidentes en tiempo real.
+          </div>
+          <div class="track-bar">
+            <div class="track-fill" style="width:50%"></div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==========================================
+     LEADERBOARD
+========================================== -->
+    <section class="leaderboard" id="leaderboard">
+      <div class="section-label">Hall of Fame</div>
+      <h2 class="section-title">Top Hackers Globales</h2>
+
+      <div class="lb-table">
+        <!-- Header -->
+        <div class="lb-row">
+          <span>#</span>
+          <span>Usuario</span>
+          <span>Puntos</span>
+          <span>Owns</span>
+          <span>Rango</span>
+        </div>
+
+        <div class="lb-row">
+          <span class="lb-rank rank-gold">01</span>
+          <div class="lb-user">
+            <div class="avatar" style="background:#9fef00">GX</div>
+            <div>
+              <div class="lb-name">g0blin_x</div>
+              <div class="lb-country">🇩🇪 Alemania</div>
+            </div>
+          </div>
+          <span class="lb-pts">98,420</span>
+          <span class="lb-owns">512</span>
+          <span class="lb-badge">Guru</span>
+        </div>
+
+        <div class="lb-row">
+          <span class="lb-rank rank-silver">02</span>
+          <div class="lb-user">
+            <div class="avatar" style="background:#60a5fa">SK</div>
+            <div>
+              <div class="lb-name">ShadowKnife</div>
+              <div class="lb-country">🇺🇸 EE.UU.</div>
+            </div>
+          </div>
+          <span class="lb-pts">94,180</span>
+          <span class="lb-owns">489</span>
+          <span class="lb-badge">Guru</span>
+        </div>
+
+        <div class="lb-row">
+          <span class="lb-rank rank-bronze">03</span>
+          <div class="lb-user">
+            <div class="avatar" style="background:#a855f7">NX</div>
+            <div>
+              <div class="lb-name">n3xuspy</div>
+              <div class="lb-country">🇪🇸 España</div>
+            </div>
+          </div>
+          <span class="lb-pts">91,550</span>
+          <span class="lb-owns">461</span>
+          <span class="lb-badge">Elite</span>
+        </div>
+
+        <div class="lb-row">
+          <span class="lb-rank">04</span>
+          <div class="lb-user">
+            <div class="avatar" style="background:#f59e0b">RZ</div>
+            <div>
+              <div class="lb-name">r00tz3r0</div>
+              <div class="lb-country">🇧🇷 Brasil</div>
+            </div>
+          </div>
+          <span class="lb-pts">87,300</span>
+          <span class="lb-owns">443</span>
+          <span class="lb-badge">Elite</span>
+        </div>
+
+        <div class="lb-row">
+          <span class="lb-rank">05</span>
+          <div class="lb-user">
+            <div class="avatar" style="background:#ef4444">PX</div>
+            <div>
+              <div class="lb-name">ph4ntom_x</div>
+              <div class="lb-country">🇫🇷 Francia</div>
+            </div>
+          </div>
+          <span class="lb-pts">83,740</span>
+          <span class="lb-owns">421</span>
+          <span class="lb-badge">Pro Hacker</span>
+        </div>
+
+        <div class="lb-row">
+          <span class="lb-rank">06</span>
+          <div class="lb-user">
+            <div class="avatar" style="background:#14b8a6">CY</div>
+            <div>
+              <div class="lb-name">cyph3r_y4mi</div>
+              <div class="lb-country">🇯🇵 Japón</div>
+            </div>
+          </div>
+          <span class="lb-pts">79,210</span>
+          <span class="lb-owns">398</span>
+          <span class="lb-badge">Pro Hacker</span>
+        </div>
+
+        <div class="lb-row">
+          <span class="lb-rank">07</span>
+          <div class="lb-user">
+            <div class="avatar" style="background:#ec4899">ZH</div>
+            <div>
+              <div class="lb-name">z3r0h4ck</div>
+              <div class="lb-country">🇦🇷 Argentina</div>
+            </div>
+          </div>
+          <span class="lb-pts">74,560</span>
+          <span class="lb-owns">382</span>
+          <span class="lb-badge">Hacker</span>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==========================================
+     CTA
+========================================== -->
+    <section class="cta">
+      <div class="cta-glow"></div>
+      <div class="hero-badge" style="justify-content:center;margin-bottom:1.5rem;display:inline-flex">
+        <span class="badge-dot"></span>
+        <span class="badge-text">+500 nuevos miembros hoy</span>
+      </div>
+      <h2>
+        ¿Listo para empezar a<br>
+        <span style="color:var(--green)">hackear?</span>
+      </h2>
+      <p>Únete a la comunidad de ciberseguridad más grande del mundo. Completamente gratis para siempre.</p>
+      <div class="cta-actions">
+        <a href="#" class="btn-green btn-cta">Crear cuenta gratis →</a>
+        <a href="#" class="btn-outline btn-cta">Ver planes Enterprise</a>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ==========================================
+     FOOTER
+========================================== -->
+  <footer>
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="#" class="nav-logo" style="display:inline-flex">
+          <div class="logo-icon" style="width:30px;height:30px">
+            <svg viewBox="0 0 24 24" fill="none">
+              <path d="M12 2L2 7l10 5 10-5-10-5z" fill="#000" />
+            </svg>
+          </div>
+          <span class="logo-text" style="font-size:13px">Hack<span>The</span>Box</span>
+        </a>
+        <p>La plataforma líder de entrenamiento en ciberseguridad con más de 2 millones de hackers activos.</p>
+      </div>
+
+      <div class="footer-col">
+        <h5>Plataforma</h5>
+        <a href="#">Laboratorios</a>
+        <a href="#">Academia</a>
+        <a href="#">CTF</a>
+        <a href="#">Certificaciones</a>
+        <a href="#">Enterprise</a>
+        <a href="#">Talent Search</a>
+      </div>
+
+      <div class="footer-col">
+        <h5>Aprender</h5>
+        <a href="#">Rutas de Aprendizaje</a>
+        <a href="#">Módulos</a>
+        <a href="#">Writeups</a>
+        <a href="#">Blog</a>
+        <a href="#">Webinars</a>
+      </div>
+
+      <div class="footer-col">
+        <h5>Comunidad</h5>
+        <a href="#">Discord</a>
+        <a href="#">Foro</a>
+        <a href="#">Eventos</a>
+        <a href="#">Meetups</a>
+        <a href="#">Embajadores</a>
+        <a href="#">Programa SME</a>
+      </div>
+
+      <div class="footer-col">
+        <h5>Empresa</h5>
+        <a href="#">Sobre HTB</a>
+        <a href="#">Carreras</a>
+        <a href="#">Prensa</a>
+        <a href="#">Partners</a>
+        <a href="#">Confianza</a>
+        <a href="#">Legal</a>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>© 2025 Hack The Box Ltd. Todos los derechos reservados.</p>
+      <div class="social-links">
+        <a href="https://twitter.com/hackthebox_eu" target="_blank" class="social-link" title="Twitter">tw</a>
+        <a href="https://github.com/hackthebox" target="_blank" class="social-link" title="GitHub">gh</a>
+        <a href="https://youtube.com/c/HackTheBox" target="_blank" class="social-link" title="YouTube">yt</a>
+        <a href="https://linkedin.com/company/hackthebox" target="_blank" class="social-link" title="LinkedIn">li</a>
+        <a href="https://discord.com/invite/hackthebox" target="_blank" class="social-link" title="Discord">dc</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Reemplaza o añade esto antes del cierre del </body> -->
+
+  <!-- MODAL DE AUTENTICACIÓN -->
+  <div id="auth-modal" class="modal">
+    <div class="modal-content">
+      <span class="close-modal" onclick="closeAuth()">&times;</span>
+      <div id="login-form">
+        <h3>Iniciar Sesión</h3>
+        <input type="email" id="login-email" placeholder="Correo electrónico">
+        <input type="password" id="login-pass" placeholder="Contraseña">
+        <button class="btn-green" onclick="handleLogin()">Entrar</button>
+        <p>¿No tienes cuenta? <a href="#" onclick="toggleAuth(true)">Regístrate</a></p>
+      </div>
+      <div id="register-form" style="display:none;">
+        <h3>Crear Cuenta</h3>
+        <input type="text" id="reg-user" placeholder="Nombre de usuario">
+        <input type="email" id="reg-email" placeholder="Correo electrónico">
+        <input type="password" id="reg-pass" placeholder="Contraseña (mín. 14 caracteres)">
+        <button class="btn-green" onclick="handleRegister()">Registrarse</button>
+        <p>¿Ya tienes cuenta? <a href="#" onclick="toggleAuth(false)">Inicia sesión</a></p>
+      </div>
+    </div>
+  </div>
+
+  <!-- SECCIÓN DE GESTIÓN DE CONTENIDO -->
+  <section id="admin-section" class="admin-panel" style="display:none;">
+    <div class="section-label">Panel de Control</div>
+    <h2 class="section-title">Agregar Contenido</h2>
+    <div class="admin-grid">
+      <div class="admin-card">
+        <h4>Nuevo Laboratorio/Video</h4>
+        <input type="text" id="new-title" placeholder="Título del item">
+        <input type="text" id="new-url" placeholder="URL (YouTube o Lab)">
+        <select id="new-type">
+          <option value="video">Video</option>
+          <option value="lab">Laboratorio</option>
+        </select>
+        <button class="btn-green" onclick="addItem()">Agregar a la lista</button>
+      </div>
+      <div class="admin-card">
+        <h4>Personalizar Fondo</h4>
+        <div class="bg-options">
+          <button onclick="changeBG('hex')">Hexágonos</button>
+          <button onclick="changeBG('space')">Espacio</button>
+          <button onclick="changeBG('matrix')">Matrix</button>
+        </div>
+      </div>
+    </div>
+    <div id="user-content-list" class="machines-grid" style="margin-top: 2rem;">
+      <!-- Aquí aparecerán los nuevos videos/labs -->
+    </div>
+  </section>
+  <!-- MODAL LAB -->
+  <div id="lab-modal" class="modal">
+    <div class="modal-content" style="max-width:700px">
+      <span class="close-modal" onclick="closeLab()">&times;</span>
+      <h3 id="lab-title"></h3>
+      <div id="lab-steps" style="margin-top:1rem"></div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+
+  <script>
+
+
+  </script>
+
+</body>
+
+</html>
